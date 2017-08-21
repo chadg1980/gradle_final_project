@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/gradle_final_project.iml" filepath="$PROJECT_DIR$/gradle_final_project.iml" />
+      <module fileurl="file://$PROJECT_DIR$/java_joke_lib/java_joke_lib.iml" filepath="$PROJECT_DIR$/java_joke_lib/java_joke_lib.iml" />
     </modules>
   </component>
 </project>
