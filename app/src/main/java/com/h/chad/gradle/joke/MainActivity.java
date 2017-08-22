@@ -1,11 +1,13 @@
 package com.h.chad.gradle.joke;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;//.gradle.builditbigger;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.util.Pair;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -46,10 +48,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void tellJoke(View view) {
-        ChadJokeClass twss = new ChadJokeClass();
-        String thisJoke = twss.punchLine();
+        new JokeAsyncTask().execute(new Pair<Context, String>(this, "CHAD"));
+
+        //ChadJokeClass twss = new ChadJokeClass();
+        //String thisJoke = twss.punchLine();
         Intent intent = new Intent(this, displayJokeActivity.class);
-        intent.putExtra(displayJokeActivity.GET_THE_JOKE, thisJoke);
+        //intent.putExtra(displayJokeActivity.GET_THE_JOKE, thisJoke);
         startActivity(intent);
     }
 
