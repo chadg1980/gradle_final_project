@@ -8,11 +8,6 @@ import android.text.TextUtils;
 import android.util.Log;
 import android.widget.TextView;
 
-import org.w3c.dom.Text;
-
-import static android.R.attr.tag;
-
-
 public class displayJokeActivity extends AppCompatActivity {
 
     public final static String GET_THE_JOKE = "GET_THE_JOKE";
