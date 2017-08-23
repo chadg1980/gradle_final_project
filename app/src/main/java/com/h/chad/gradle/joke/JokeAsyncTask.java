@@ -1,11 +1,8 @@
 package com.h.chad.gradle.joke;
 
 import android.content.Context;
-import android.content.Intent;
 import android.os.AsyncTask;
 import android.util.Pair;
-import android.widget.Toast;
-
 
 import com.google.api.client.extensions.android.http.AndroidHttp;
 import com.google.api.client.extensions.android.json.AndroidJsonFactory;
@@ -56,8 +53,6 @@ public class JokeAsyncTask extends AsyncTask<Pair<Context, String>, Void, String
 
     @Override
     protected void onPostExecute(String thisJoke) {
-        Intent intent = new Intent(context, displayJokeActivity.class);
-        intent.putExtra(displayJokeActivity.GET_THE_JOKE, thisJoke + " from AsycTask");
-        context.startActivity(intent);
+        displayJokeActivity.jokeIntent(thisJoke, context);
     }
 }

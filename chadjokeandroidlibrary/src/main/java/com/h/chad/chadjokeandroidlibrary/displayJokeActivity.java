@@ -2,8 +2,8 @@ package com.h.chad.chadjokeandroidlibrary;
 
 import android.content.Context;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.util.Log;
 import android.widget.TextView;
@@ -30,5 +30,11 @@ public class displayJokeActivity extends AppCompatActivity {
         if(!TextUtils.isEmpty(theJoke)){
             tv_joke.setText(theJoke);
         }
+    }
+
+    public static void jokeIntent(String thisJoke, Context context) {
+        Intent intent = new Intent(context, displayJokeActivity.class);
+        intent.putExtra(GET_THE_JOKE, thisJoke);
+        context.startActivity(intent);
     }
 }
