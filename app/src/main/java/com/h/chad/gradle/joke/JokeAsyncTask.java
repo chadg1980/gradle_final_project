@@ -1,6 +1,7 @@
 package com.h.chad.gradle.joke;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.util.Pair;
 import android.widget.Toast;
@@ -11,6 +12,7 @@ import com.google.api.client.extensions.android.json.AndroidJsonFactory;
 import com.google.api.client.googleapis.services.AbstractGoogleClientRequest;
 import com.google.api.client.googleapis.services.GoogleClientRequestInitializer;
 import com.h.chad.backendjoke.backend.myApi.MyApi;
+import com.h.chad.chadjokeandroidlibrary.displayJokeActivity;
 
 import java.io.IOException;
 
@@ -50,11 +52,12 @@ public class JokeAsyncTask extends AsyncTask<Pair<Context, String>, Void, String
         }catch (IOException e){
             return e.getMessage();
         }
-
     }
 
     @Override
-    protected void onPostExecute(String s) {
-        Toast.makeText(context, s, Toast.LENGTH_LONG).show();
+    protected void onPostExecute(String thisJoke) {
+        Intent intent = new Intent(context, displayJokeActivity.class);
+        intent.putExtra(displayJokeActivity.GET_THE_JOKE, thisJoke + " from AsycTask");
+        context.startActivity(intent);
     }
 }

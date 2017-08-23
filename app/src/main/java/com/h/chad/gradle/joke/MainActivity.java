@@ -15,7 +15,6 @@ import android.widget.Toast;
 import com.alljokes.ChadJokeClass;
 import com.h.chad.chadjokeandroidlibrary.displayJokeActivity;
 
-
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -48,14 +47,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void tellJoke(View view) {
+
         new JokeAsyncTask().execute(new Pair<Context, String>(this, "CHAD"));
 
-        //ChadJokeClass twss = new ChadJokeClass();
-        //String thisJoke = twss.punchLine();
-        Intent intent = new Intent(this, displayJokeActivity.class);
-        //intent.putExtra(displayJokeActivity.GET_THE_JOKE, thisJoke);
-        startActivity(intent);
+
     }
-
-
 }
