@@ -32,12 +32,12 @@ public class MyEndpoint {
     /**
      * A simple endpoint method that takes a name and says Hi back
      */
-    @ApiMethod(name = "sayHi")
-    public MyBean sayHi(@Named("name") String name) {
+    @ApiMethod(name = "jokeBackend")
+    public MyBean sayHi() {
         MyBean response = new MyBean();
         ChadJokeClass jokeClass = new ChadJokeClass();
         String jokeToReturn = jokeClass.punchLine();
-        response.setData("Hi, " + name + " " + jokeToReturn );
+        response.setData(jokeToReturn );
 
         return response;
     }
