@@ -2,7 +2,6 @@ package com.h.chad.gradle.joke;
 
 import android.content.Context;
 import android.os.AsyncTask;
-import android.util.Pair;
 
 import com.google.api.client.extensions.android.http.AndroidHttp;
 import com.google.api.client.extensions.android.json.AndroidJsonFactory;
